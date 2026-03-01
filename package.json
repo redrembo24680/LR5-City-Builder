@@ -1,0 +1,16 @@
+{
+    "name": "city-builder-lab5",
+    "version": "1.0.0",
+    "description": "Lab 5 — City Builder (Express + Vercel)",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js",
+        "vercel-build": "cd client && npm install && npm run build"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.21.0",
+        "firebase-admin": "^13.0.0"
+    }
+}

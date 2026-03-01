@@ -1,0 +1,10 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+serviceAccountKey.json
+public/
+client/node_modules
+client/dist
