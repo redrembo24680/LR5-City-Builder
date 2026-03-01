@@ -7,4 +7,3 @@ node_modules
 serviceAccountKey.json
 public/
 client/node_modules
-client/dist
