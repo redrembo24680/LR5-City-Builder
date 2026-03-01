@@ -10,8 +10,12 @@ if (!admin.apps.length) {
         const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
         credential = admin.credential.cert(serviceAccount);
     } else {
-        const serviceAccount = require('../serviceAccountKey.json');
-        credential = admin.credential.cert(serviceAccount);
+        try {
+            const serviceAccount = require('../serviceAccountKey.json');
+            credential = admin.credential.cert(serviceAccount);
+        } catch (e) {
+            console.log("Service account file not found, skipping local init");
+        }
     }
 
     admin.initializeApp({ credential });

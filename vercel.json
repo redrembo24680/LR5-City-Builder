@@ -1,15 +1,13 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "api/buildings.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
+            "source": "/api/buildings",
+            "destination": "/api/buildings.js"
+        },
         {
-            "src": "/api/(.*)",
-            "dest": "/api/buildings.js"
+            "source": "/api/(.*)",
+            "destination": "/api/buildings.js"
         },
         {
             "handle": "filesystem"
@@ -17,6 +15,10 @@
         {
             "src": "/(.*)",
             "dest": "/client/dist/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/client/dist/index.html"
         }
     ]
 }
